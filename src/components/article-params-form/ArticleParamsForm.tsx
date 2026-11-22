@@ -59,7 +59,6 @@ export const ArticleParamsForm = ({
   const handleApply = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     onApply(formState);
-    setIsSidebarOpen(false);
   };
 
   const handleReset = (): void => {
