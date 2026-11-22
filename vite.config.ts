@@ -20,7 +20,13 @@ export default defineConfig({
   base: '',
   css: {
     modules: {
-      generateScopedName: '[name]__ [local]_[hash:base64:5]'.replace(' ', ''),
+      generateScopedName: (name, filename) => {
+        const fileName = filename.split('/').pop()?.replace('.module.scss', '') ?? '';
+
+        const prefix = fileName === 'app' ? 'index-module' : `${fileName}-module`;
+
+        return `${prefix}__${name}`;
+      },
     },
     preprocessorOptions: {
       scss: {

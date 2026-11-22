@@ -95,7 +95,7 @@ export const ArticleParamsForm = ({
           />
 
           <RadioGroup
-            name="fontSize"
+            name="radio"
             title="Размер шрифта"
             selected={formState.fontSizeOption}
             options={fontSizeOptions}
